@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon Portfolio</title>
+    <style>
+        /* Général */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #2c003e, #100020);
+            color: #fff;
+        }
+        header {
+            background-color: #4a007e;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #30004b;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        nav a {
+            color: #e1bee7;
+            padding: 14px 20px;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #6200ea;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: #fff;
+            transition: width 0.3s ease;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Contenu principal */
+        .content {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            padding: 20px;
+            background-color: #1b0030;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+        }
+        .active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Titre des onglets */
+        .tab-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #bb86fc;
+            text-align: center;
+        }
+
+        /* Photos */
+        .photo {
+            width: 80%;
+            max-width: 500px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Cartes pour la section veille */
+        .card {
+            background-color: #2b004e;
+            border: 1px solid #6600cc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Section projets */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .project-box {
+            background-color: #2b004e;
+            border: 1px solid #6600cc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            width: 48%;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .project-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4a007e;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav a {
+                padding: 10px 15px;
+            }
+            .content {
+                margin: 10px;
+                padding: 15px;
+            }
+            .projects-container {
+                flex-direction: column;
+            }
+            .project-box {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MARIK RAYNAL</h1>
+        <p>BTS SIO option SISR</p>
+    </header>
+
+    <nav>
+        <a href="#" onclick="showTab('accueil')">Accueil</a>
+        <a href="#" onclick="showTab('a-propos')">À Propos</a>
+        <a href="#" onclick="showTab('parcours')">Mon Parcours</a>
+        <a href="#" onclick="showTab('veille')">Veilles Technologiques</a>
+        <a href="#" onclick="showTab('mes-projets')">Mes Projets</a>
+        <a href="#" onclick="showTab('contact')">Contact</a>
+        <a href="#" onclick="showTab('epreuve-e4')">Épreuve E4</a>
+    </nav>
+
+    <div id="accueil" class="content active">
+        <h2 class="tab-title">Bienvenue dans mon portfolio</h2>
+        <p>Je suis passionné par la technologie et j'aime découvrir de nouvelles solutions et tendances. Explorez mon parcours et mes projets !</p>
+        <img src="data:image/jpeg;base64,/9j/4VjcEC3aF1ou3Ixuz+Q2PQmqWQLroi7WvxjPcB6KqwSdQAoAoAoAoAoAoAoAoAoAoAoAoAoAoBI0B/9k=" alt="Image d'accueil" class="photo">
+    </div>
+
+    <div id="a-propos" class="content">
+        <h2 class="tab-title">À propos de moi</h2>
+        <p>Je suis un passionné de technologies. Voici un aperçu de mes qualités :</p>
+        <ul>
+            <li>Travail en équipe</li>
+            <li>Réseau, Cybersécurité</li>
+            <li>Gestion des utilisateurs</li>
+        </ul>
+        <a href="CV_Marik_Raynal.pdf" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #bb86fc; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; text-align: center;">Mon CV</a>
+    </div>
+
+    <div id="parcours" class="content">
+        <h2 class="tab-title">Mon Parcours</h2>
+        <p>Voici mon parcours académique et professionnel :</p>
+        <ul>
+            <li>2020 - 2023 : Bac pro MELEC obtenu</li>
+            <li>2021 : Stage chez Enedis</li>
+            <li>2023 - 2025 : BTS SIO option SISR en cours</li>
+            <li>2024 : Stage au service informatique du Ministère de l'agriculture à Paris</li>
+            <li>2025 : Stage au service informatique du crédit agricole à Bois-guillaume</li>
+        </ul>
+    </div>
+
+    <div id="veille" class="content">
+        <h2 class="tab-title">Veilles Technologiques</h2>
+        <div class="textarea-container">
+            <h3>Outil utilisé pour ma veille.</h3>
+            <p>Pour ma veille technologique, j'ai utilisé Google Alertes, un outil gratuit proposé par Google qui permet de rester informé sur des sujets spécifiques en recevant des notifications par e-mail. Cet outil fonctionne en surveillant continuellement le web pour détecter les nouveaux contenus correspondant à des mots-clés définis. Par exemple, j'ai configuré des alertes sur des termes liés au arnaque en ligne. Cela m'a permis de collecter des informations pertinentes, fiables et actualisées pour enrichir mes connaissances et suivre l'évolution de mon domaine d'étude. Google Alertes est un excellent moyen d'automatiser la recherche d'informations et de gagner du temps dans le cadre d'une veille régulière.</p>
+        </div>
+        <div class="card">
+            <h3><a href="veille-premiere-annee.html" target="_blank" style="color: #bb86fc; text-decoration: none;">Veille Technologique Première Année</a></h3>
+            <p>Cliquez ici pour découvrir mes travaux de veille technologique de première année.</p>
+        </div>
+        <div class="card">
+            <h3><a href="veille-deuxieme-annee.html" target="_blank" style="color: #bb86fc; text-decoration: none;">Veille Technologique Deuxième Année</a></h3>
+            <p>Cliquez ici pour découvrir mes travaux de veille technologique de deuxième année.</p>
+        </div>
+    </div>
+
+    <div id="mes-projets" class="content">
+        <h2 class="tab-title">Mes Projets</h2>
+        <div class="projects-container">
+            <div class="project-box" onclick="window.open('installer_GLPI_marik_raynal.pdf', '_blank')">
+                <h3>Installer GLPI</h3>
+                <p>Description du projet 1.</p>
+            </div>
+            <div class="project-box" onclick="window.open('projet2.pdf', '_blank')">
+                <h3>Projet 2</h3>
+                <p>Description du projet 2.</p>
+            </div>
+            <div class="project-box" onclick="window.open('projet3.pdf', '_blank')">
+                <h3>Projet 3</h3>
+                <p>Description du projet 3.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="content">
+        <h2 class="tab-title">Contactez-moi</h2>
+        <p>Email : <a href="mailto:marikraynal@gmail.com" style="color: #bb86fc;">marikraynal@gmail.com</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MARIK RAYNAL - BTS SIO SISR</p>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
+</body>
+</html>
