@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Technologique</title>
+    <style>
+        /* Styles globaux */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Noir profond */
+            color: #ffffff; /* Texte blanc */
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #bb86fc; /* Violet éclatant */
+        }
+
+        /* Conteneur principal */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Style des articles */
+        .article {
+            background: #1e1e1e; /* Noir moins profond */
+            border: 1px solid #bb86fc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .article h2 {
+            margin-top: 0;
+        }
+
+        .article p {
+            line-height: 1.6;
+        }
+
+        .article a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            color: #121212;
+            background: #bb86fc;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .article a:hover {
+            background: #9f6bf1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background: #1e1e1e;
+            color: #bb86fc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ma Veille Technologique</h1>
+    </header>
+    <main class="container">
+        <!-- Article 1 -->
+        <div class="article">
+            <h2>Article 1 : L'évolution de l'IA</h2>
+            <p>Un aperçu des derniers progrès en matière d'intelligence artificielle et de leurs impacts sur notre quotidien.</p>
+            <a href="https://lien-vers-article1.com" target="_blank">Lire l'article</a>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article">
+            <h2>Article 2 : La cybersécurité en 2024</h2>
+            <p>Découvrez les nouvelles menaces et solutions dans le domaine de la cybersécurité cette année.</p>
+            <a href="https://lien-vers-article2.com" target="_blank">Lire l'article</a>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article">
+            <h2>Article 3 : Les tendances Cloud Computing</h2>
+            <p>Les technologies cloud qui révolutionnent le monde des entreprises.</p>
+            <a href="https://lien-vers-article3.com" target="_blank">Lire l'article</a>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 - Veille Technologique | Fait avec ❤️
+    </footer>
+</body>
+</html>
